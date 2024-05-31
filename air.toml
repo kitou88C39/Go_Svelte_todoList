@@ -6,35 +6,6 @@ tem_dir = "temp"
 bin = "bin/app"
 cmd = "go build -o {{.Output}}{{.Input}}"
 exclude = ["tmp/*", "client/*"]
+include = ["**/*.go"]
+ignore = ["tmp/*"]
 
-
-# Watch directories (Default is ["./"])
-# You can add more directories to watch (e.g., ./cmd, ./pkg)
-watch_dirs = ["./"]
-
-# Run command (Default is "go build -o ./bin/app .")
-build = "go build -o ./bin/app ."
-
-# Full restart
-full_restart = true
-
-# Air creates a pid file, delete it before starting
-delete_pid_file = true
-
-# Log file path
-log = "air.log"
-
-# Enable or disable verbose logging
-verbose = false
-
-# Color for logs
-# You can change the log color (e.g., "auto", "disable", "force")
-color = "auto"
-
-# Address for the server
-# You can set the server address (e.g., localhost, 127.0.0.1)
-address = "localhost"
-
-# Port for the server
-# You can set the server port (e.g., 8080)
-port = 8080
