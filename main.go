@@ -17,5 +17,7 @@ func main(){
 }
 
 func JSONMiddleware(next http.Handler) http.Handler{
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {})
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+	})
 }
