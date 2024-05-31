@@ -10,6 +10,7 @@ import (
 func main(){
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
+	r.Use(JSONMiddleware)
 	r.Get("/",func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Hello world"))
 	})
@@ -19,5 +20,6 @@ func main(){
 func JSONMiddleware(next http.Handler) http.Handler{
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
+		next.ServeHTTP(w,r)
 	})
 }
