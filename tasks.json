@@ -1,6 +1,0 @@
-[
-  { "id": 1, "name": "Wash The Dishes", "done": false },
-  { "id": 2, "name": "Walk The Dog", "done": true },
-  { "id": 3, "name": "Feed The Cats", "done": false },
-  { "id": 4, "name": "Reed A Book", "done": true }
-]
