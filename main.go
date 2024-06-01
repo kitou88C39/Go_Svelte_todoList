@@ -34,15 +34,12 @@ func main(){
 }
 todo.ID = len(todos) + 1
 todos = append(todos, *todo)
+// var x int = 5
+// var p *int = &x
 
-var x int = 5
-var p *int = &x
-
-fmt.Println(p)
-fmt.Println(*p)
+// fmt.Println(p)
+// fmt.Println(*p)
 return c.Status(201).JSON((todo))
-
-
 })
 
 	log.Fatal(app.Listen(":4000"))
