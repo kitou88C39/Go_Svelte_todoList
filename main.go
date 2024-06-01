@@ -42,5 +42,11 @@ todos = append(todos, *todo)
 return c.Status(201).JSON((todo))
 })
 
+//Update a Todo
+app.Patch("/api/todos/:id",func(c *fiber.Ctx) error {
+	id := c.Params("id")
+	for i, todo := range todos{}
+})
+
 	log.Fatal(app.Listen(":4000"))
 }
