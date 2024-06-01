@@ -8,18 +8,22 @@ import (
 )
 
 type Todo struct{
-	ID int
-	Completed bool
-	Body string
+	ID int `json:"id"`
+	Completed bool `json:"completed"`
+	Body string `json:"body"`
 }
 
 func main(){
 	fmt.Println("Hello world")
 	app := fiber.New()
 
+	todos := []todo{}
+
 	app.Get("/", func (c *fiber.Ctx) error {
 		return c.Status(200).JSON(fiber.Map{"msg":"hello world"})
 	})
+
+	app.Post("/api/todos", func(c *fiber.Ctx) error {})
 
 	log.Fatal(app.Listen(":4000"))
 }
